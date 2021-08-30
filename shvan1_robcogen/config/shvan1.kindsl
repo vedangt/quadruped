@@ -1,0 +1,355 @@
+Robot shvan1
+{
+
+RobotBase base floating {
+    inertia_properties {
+        mass = 10.0
+        CoM = (0.0, 0.0, 0.0)
+        Ix = 0.154712
+        Iy = 0.3071
+        Iz = 0.445212
+        Ixy= 0.0
+        Ixz= 0.0
+        Iyz= 0.0
+    }
+    children {
+        hip_link_LF via hip_joint_LF
+        hip_link_RF via hip_joint_RF
+        hip_link_LH via hip_joint_LH
+        hip_link_RH via hip_joint_RH
+    }
+    frames {
+        base_inertia {
+            translation = (0.0, 0.0, 0.0)
+            rotation    = (0.0, 0.0, 0.0)
+        }
+        imu_link {
+            translation = (0.0, 0.0, 0.0)
+            rotation    = (0.0, 0.0, 0.0)
+        }
+    }
+}
+
+
+link hip_link_LF {
+    id = 1
+    inertia_properties {
+        mass = 0.6
+        CoM = (0.04, 0.0, 0.0)
+        Ix = 0.000062
+        Iy = 0.00131
+        Iz = 0.00131
+        Ixy= 0.0
+        Ixz= 0.0
+        Iyz= 0.0
+    }
+    children {
+        thigh_link_LF via elbow_joint_LF
+    }
+}
+
+
+link thigh_link_LF {
+    id = 2
+    inertia_properties {
+        mass = 1.2
+        CoM = (0.1, 0.0, 0.0)
+        Ix = 0.000125
+        Iy = 0.016046
+        Iz = 0.016046
+        Ixy= 0.0
+        Ixz= 0.0
+        Iyz= 0.0
+    }
+    children {
+        shank_link_LF via knee_joint_LF
+    }
+}
+
+
+link shank_link_LF {
+    id = 3
+    inertia_properties {
+        mass = 0.5
+        CoM = (0.161, 0.0, 0.0)
+        Ix = 0.000052
+        Iy = 0.015901
+        Iz = 0.015901
+        Ixy= 0.0
+        Ixz= 0.0
+        Iyz= 0.0
+    }
+    children {
+    }
+    frames {
+        LF_FOOT {
+            translation = (0.23, 0.0, 0.0)
+            rotation    = (0.0, 0.0, 0.0)
+        }
+    }
+}
+
+
+link hip_link_RF {
+    id = 4
+    inertia_properties {
+        mass = 0.6
+        CoM = (0.04, 0.0, 0.0)
+        Ix = 0.000062
+        Iy = 0.00131
+        Iz = 0.00131
+        Ixy= 0.0
+        Ixz= 0.0
+        Iyz= 0.0
+    }
+    children {
+        thigh_link_RF via elbow_joint_RF
+    }
+}
+
+
+link thigh_link_RF {
+    id = 5
+    inertia_properties {
+        mass = 1.2
+        CoM = (0.1, 0.0, 0.0)
+        Ix = 0.000125
+        Iy = 0.016046
+        Iz = 0.016046
+        Ixy= 0.0
+        Ixz= 0.0
+        Iyz= 0.0
+    }
+    children {
+        shank_link_RF via knee_joint_RF
+    }
+}
+
+
+link shank_link_RF {
+    id = 6
+    inertia_properties {
+        mass = 0.5
+        CoM = (0.161, 0.0, 0.0)
+        Ix = 0.000052
+        Iy = 0.015901
+        Iz = 0.015901
+        Ixy= 0.0
+        Ixz= 0.0
+        Iyz= 0.0
+    }
+    children {
+    }
+    frames {
+        RF_FOOT {
+            translation = (0.23, 0.0, 0.0)
+            rotation    = (0.0, 0.0, 0.0)
+        }
+    }
+}
+
+
+link hip_link_LH {
+    id = 7
+    inertia_properties {
+        mass = 0.6
+        CoM = (0.04, 0.0, 0.0)
+        Ix = 0.000062
+        Iy = 0.00131
+        Iz = 0.00131
+        Ixy= 0.0
+        Ixz= 0.0
+        Iyz= 0.0
+    }
+    children {
+        thigh_link_LH via elbow_joint_LH
+    }
+}
+
+
+link thigh_link_LH {
+    id = 8
+    inertia_properties {
+        mass = 1.2
+        CoM = (0.1, 0.0, 0.0)
+        Ix = 0.000125
+        Iy = 0.016046
+        Iz = 0.016046
+        Ixy= 0.0
+        Ixz= 0.0
+        Iyz= 0.0
+    }
+    children {
+        shank_link_LH via knee_joint_LH
+    }
+}
+
+
+link shank_link_LH {
+    id = 9
+    inertia_properties {
+        mass = 0.5
+        CoM = (0.161, 0.0, 0.0)
+        Ix = 0.000052
+        Iy = 0.015901
+        Iz = 0.015901
+        Ixy= 0.0
+        Ixz= 0.0
+        Iyz= 0.0
+    }
+    children {
+    }
+    frames {
+        LH_FOOT {
+            translation = (0.23, 0.0, 0.0)
+            rotation    = (0.0, 0.0, 0.0)
+        }
+    }
+}
+
+
+link hip_link_RH {
+    id = 10
+    inertia_properties {
+        mass = 0.6
+        CoM = (0.04, 0.0, 0.0)
+        Ix = 0.000062
+        Iy = 0.00131
+        Iz = 0.00131
+        Ixy= 0.0
+        Ixz= 0.0
+        Iyz= 0.0
+    }
+    children {
+        thigh_link_RH via elbow_joint_RH
+    }
+}
+
+
+link thigh_link_RH {
+    id = 11
+    inertia_properties {
+        mass = 1.2
+        CoM = (0.1, 0.0, 0.0)
+        Ix = 0.000125
+        Iy = 0.016046
+        Iz = 0.016046
+        Ixy= 0.0
+        Ixz= 0.0
+        Iyz= 0.0
+    }
+    children {
+        shank_link_RH via knee_joint_RH
+    }
+}
+
+
+link shank_link_RH {
+    id = 12
+    inertia_properties {
+        mass = 0.5
+        CoM = (0.161, 0.0, 0.0)
+        Ix = 0.000052
+        Iy = 0.015901
+        Iz = 0.015901
+        Ixy= 0.0
+        Ixz= 0.0
+        Iyz= 0.0
+    }
+    children {
+    }
+    frames {
+        RH_FOOT {
+            translation = (0.23, 0.0, 0.0)
+            rotation    = (0.0, 0.0, 0.0)
+        }
+    }
+}
+
+
+r_joint hip_joint_LF {
+    ref_frame {
+        translation = (0.3, 0.21, 0.0)
+        rotation    = (0.0, PI/2.0, 0.0)
+    }
+}
+
+r_joint elbow_joint_LF {
+    ref_frame {
+        translation = (0.08, 0.0, 0.0)
+        rotation    = (PI/2.0, 0.0, 0.0)
+    }
+}
+
+r_joint knee_joint_LF {
+    ref_frame {
+        translation = (0.2, 0.0, 0.0)
+        rotation    = (0.0, 0.0, 0.0)
+    }
+}
+
+r_joint hip_joint_RF {
+    ref_frame {
+        translation = (0.3, -0.21, 0.0)
+        rotation    = (0.0, PI/2.0, 0.0)
+    }
+}
+
+r_joint elbow_joint_RF {
+    ref_frame {
+        translation = (0.08, 0.0, 0.0)
+        rotation    = (PI/2.0, 0.0, 0.0)
+    }
+}
+
+r_joint knee_joint_RF {
+    ref_frame {
+        translation = (0.2, 0.0, 0.0)
+        rotation    = (0.0, 0.0, 0.0)
+    }
+}
+
+r_joint hip_joint_LH {
+    ref_frame {
+        translation = (-0.3, 0.21, 0.0)
+        rotation    = (0.0, PI/2.0, 0.0)
+    }
+}
+
+r_joint elbow_joint_LH {
+    ref_frame {
+        translation = (0.08, 0.0, 0.0)
+        rotation    = (PI/2.0, 0.0, 0.0)
+    }
+}
+
+r_joint knee_joint_LH {
+    ref_frame {
+        translation = (0.2, 0.0, 0.0)
+        rotation    = (0.0, 0.0, 0.0)
+    }
+}
+
+r_joint hip_joint_RH {
+    ref_frame {
+        translation = (-0.3, -0.21, 0.0)
+        rotation    = (0.0, PI/2.0, 0.0)
+    }
+}
+
+r_joint elbow_joint_RH {
+    ref_frame {
+        translation = (0.08, 0.0, 0.0)
+        rotation    = (PI/2.0, 0.0, 0.0)
+    }
+}
+
+r_joint knee_joint_RH {
+    ref_frame {
+        translation = (0.2, 0.0, 0.0)
+        rotation    = (0.0, 0.0, 0.0)
+    }
+}
+
+}
+
